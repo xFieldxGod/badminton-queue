@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการแข่งขันแบดมินตัน</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ระบบจัดการแข่งขันแบดมินตัน</h1>
+            <div class="input-group">
+                <input type="text" id="playerName" placeholder="เพิ่มผู้เล่น">
+            </div>
+            <div class="hint">
+                กด Enter เพื่อเพิ่มผู้เล่น
+            </div>
+        </div>
+
+        <div class="main-section">
+            <div id="matchSection" class="match-section" style="display: none;">
+                <h2>กำลังแข่งขัน</h2>
+                <div class="vs-container">
+                    <div id="team1" class="team-box">
+                    </div>
+                    <div class="vs-text">
+                        VS
+                    </div>
+                    <div id="team2" class="team-box">
+                    </div>
+                </div>
+                <div class="match-buttons">
+                    <button class="win-button" onclick="matchResult(1)">ทีม 1 ชนะ</button>
+                    <button class="win-button" onclick="matchResult(2)">ทีม 2 ชนะ</button>
+                </div>
+            </div>
+
+            <div class="match-controls">
+                <div class="control-group">
+                    <div>
+                        เลือกแล้ว: <span id="selectedCount">0</span> คน
+                    </div>
+                    <button id="matchButton" onclick="createMatch()" disabled>จับคู่ผู้เล่นที่เลือก</button>
+                </div>
+                <div id="startMatchContainer" class="start-match-container" style="display: none;">
+                    <button class="start-button" onclick="startMatch()">เริ่มการแข่งขัน</button>
+                </div>
+            </div>
+
+            <div id="queueList">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Sarabun", sans-serif;
+}
+
+body {
+    padding: 20px;
+    background-color: #f0f2f5;
+    touch-action: pan-y pinch-zoom;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+button.remove {
+    background-color: #f44336;
+}
+
+button.remove:hover {
+    background-color: #da190b;
+}
+
+button.select {
+    background-color: #2196f3;
+}
+
+button.select:hover {
+    background-color: #1976d2;
+}
+
+button.split {
+    background-color: #ff9800;
+}
+
+button.split:hover {
+    background-color: #f57c00;
+}
+
+button.win-button {
+    background-color: #ff9800;
+    font-size: 1.1em;
+    padding: 12px 24px;
+}
+
+button.win-button:hover {
+    background-color: #f57c00;
+}
+
+button.start-button {
+    background-color: #9c27b0;
+    font-size: 1.1em;
+    padding: 12px 24px;
+    width: 100%;
+}
+
+button.start-button:hover {
+    background-color: #7b1fa2;
+}
+
+.main-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f5;
+    font-weight: bold;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f8f9fa;
+    margin: 8px 0;
+    border-radius: 4px;
+    border-left: 4px solid #4caf50;
+}
+
+.list-item.playing {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.list-item.selected {
+    background-color: #e8f5e9;
+    border: 2px solid #4caf50;
+}
+
+.list-item.dragging {
+    opacity: 0.5;
+    background-color: #e3f2fd;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.number-badge {
+    background-color: #4caf50;
+    color: white;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.hint {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 8px;
+}
+
+.status-badge.waiting {
+    background-color: #ffecb3;
+    color: #ff6f00;
+}
+
+.status-badge.playing {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-badge.available {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.match-controls {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+.drag-handle {
+    cursor: move;
+    padding: 0 8px;
+    color: #666;
+    margin-right: 4px;
+}
+
+.queue-item {
+    touch-action: none;
+    user-select: none;
+}
+
+.match-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.team-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vs-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f44336;
+}
+
+.match-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.start-match-container {
+    margin-top: 10px;
+}
+
+.win-streak-badge {
+    background-color: #ffc107;
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.win-streak-badge::before {
+    content: "🏆";
+    margin-right: 4px;
+}
+
+.stats-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-table {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.stats-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #333;
+}
+
+.stats-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.stats-table td:first-child,
+.stats-table th:first-child {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 600px) {
+    .stats-table {
+        font-size: 14px;
+    }
+
+    .stats-table th,
+    .stats-table td {
+        padding: 8px;
+    }
+
+    .stats-table th {
+        white-space: nowrap;
+    }
+
+    .vs-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .team-box {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .match-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .control-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .control-group button {
+        width: 100%;
+    }
+}
